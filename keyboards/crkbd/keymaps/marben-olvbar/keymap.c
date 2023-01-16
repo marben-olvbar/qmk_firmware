@@ -20,6 +20,12 @@
 #include <stdio.h>
 #include "keycodes.h"
 
+// Tap Dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Escape, twice for Caps Lock
+    [TD_SUPER_SHIFT] = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, KC_LSFT),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // qwertz base layer
     [_BASE_QWERTZ] = LAYOUT_split_3x6_3(
@@ -30,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         MO(_SYMBOLS),    KC_Y,    KC_X,    KC_C,    KC_V,    KC_B,                   KC_N,    KC_M,   KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                                KC_LGUI, MO(_MOVEMENT),  KC_SPC,     KC_ENT,   KC_LSFT,  KC_LALT
+                                           TD(TD_SUPER_SHIFT), MO(_MOVEMENT),  KC_SPC,     KC_ENT,   KC_LSFT,  KC_LALT
                                             //`--------------------------'  `--------------------------'
         ),
 
@@ -43,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         MO(_SYMBOLS),KC_Z, KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H,    KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                               KC_LGUI, MO(_MOVEMENT),  KC_SPC,     KC_ENT,   KC_LSFT,  KC_LALT
+                                            TD(TD_SUPER_SHIFT), MO(_MOVEMENT),  KC_SPC,     KC_ENT,   KC_LSFT,  KC_LALT
                                             //`--------------------------'  `--------------------------'
         ),
     // gaming base layer, TODO

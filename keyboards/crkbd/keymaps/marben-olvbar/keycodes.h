@@ -8,3 +8,8 @@ enum layers {
     _MOVEMENT,
     _SPECIAL,
 };
+
+// Tap Dance declarations
+enum {
+    TD_SUPER_SHIFT,
+};
