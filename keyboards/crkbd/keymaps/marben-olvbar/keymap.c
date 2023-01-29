@@ -24,6 +24,7 @@
 qk_tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
     [TD_SUPER_SHIFT] = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, KC_LSFT),
+    [TD_SYM_ALT] = ACTION_TAP_DANCE_DOUBLE(MO(_SYMBOLS), KC_LALT),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -34,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LCTL,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                        KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        MO(_SYMBOLS),    KC_Y,    KC_X,    KC_C,    KC_V,    KC_B,                   KC_N,    KC_M,   KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
+        TD(TD_SYM_ALT),    KC_Y,    KC_X,    KC_C,    KC_V,    KC_B,                   KC_N,    KC_M,   KC_COMM,  KC_DOT, KC_SLSH,  KC_ESC,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                            TD(TD_SUPER_SHIFT), MO(_MOVEMENT),  KC_SPC,     KC_ENT,   KC_LSFT,  KC_LALT
                                             //`--------------------------'  `--------------------------'
@@ -47,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
         KC_LCTL,  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,   KC_O,    KC_QUOT,
         //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-        MO(_SYMBOLS),KC_Z, KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H,    KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
+        TD(TD_SUPER_SHIFT),KC_Z, KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H,    KC_COMM, KC_DOT, KC_SLSH, KC_ESC,
         //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                             TD(TD_SUPER_SHIFT), MO(_MOVEMENT),  KC_SPC,     KC_ENT,   KC_LSFT,  KC_LALT
                                             //`--------------------------'  `--------------------------'

@@ -12,4 +12,5 @@ enum layers {
 // Tap Dance declarations
 enum {
     TD_SUPER_SHIFT,
+    TD_SYM_ALT,
 };
